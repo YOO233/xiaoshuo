@@ -13,7 +13,7 @@ document.getElementById('generateForm').addEventListener('submit', async (e) => 
     submitBtn.disabled = true;
     loading.style.display = 'block';
     resultContainer.style.display = 'none';
-    let estimatedSeconds = 30;
+    let estimatedSeconds = 60;
     
     try {
         const formData = new FormData(e.target);
@@ -21,8 +21,8 @@ document.getElementById('generateForm').addEventListener('submit', async (e) => 
         
         // 心跳计时器
         const timer = setInterval(() => {
-            estimatedSeconds += 1;
-            timeEstimate.textContent = estimatedSeconds;
+            estimatedSeconds = Math.max(0, estimatedSeconds - 1);
+            timeEstimate.textContent = estimatedSeconds || '0';
         }, 1000);
         
         const response = await fetch('/', {
