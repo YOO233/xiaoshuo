@@ -22,13 +22,14 @@
                 <input type="number" id="word_count" name="word_count" 
                     value="1000" min="500" max="10000" required>
                 <span class="hint">（500-10000字）</span>
+                <div class="time-hint">预计生成时间约<span id="timeEstimatePreview">110</span>秒</div>
             </div>
 
             <button type="submit" id="submitBtn">开始生成</button>
             
             <div class="loading" id="loading">
                 <div class="spinner"></div>
-                <div class="progress-text">正在生成中，预计需要<span id="timeEstimate">60</span>秒...</div>
+                <div class="progress-text">正在生成中，预计需要<span id="timeEstimate">110</span>秒...</div>
             </div>
         </form>
 
